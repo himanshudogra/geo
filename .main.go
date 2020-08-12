@@ -8,19 +8,24 @@ import (
 )
 
 func main() {
-	coordinates := geo.Coordinate{}
+	location := geo.Landmark{}
 
-	err := coordinates.SetLatitude(23.98)
+	err := location.SetName("Taj Mahal")
+	if err != nil {
+		log.Fatal(err)
+	}
+	err = location.SetLatitude(23.98)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	err = coordinates.SetLongitude(-121.76)
+	err = location.SetLongitude(-121.76)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	fmt.Println("Latitude:", coordinates.Latitude())
-	fmt.Println("Longitude:", coordinates.Longitude())
+	fmt.Println("Name:", location.Name())
+	fmt.Println("Latitude:", location.Latitude())
+	fmt.Println("Longitude:", location.Longitude())
 
 }
