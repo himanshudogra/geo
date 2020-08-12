@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	coordinates := geo.coordinate{}
+	coordinates := geo.Coordinate{}
 
 	err := coordinates.SetLatitude(23.98)
 	if err != nil {
@@ -20,7 +20,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Println("Latitude:", geo.Latitude())
-	fmt.Println("Longitude:", geo.Longitude())
+	fmt.Println("Latitude:", coordinates.Latitude())
+	fmt.Println("Longitude:", coordinates.Longitude())
 
 }
